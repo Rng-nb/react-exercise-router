@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../styles/App.css';
-import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom';
 import Home from './Home';
 import MyProfile from './MyProfile';
 import AboutUs from './AboutUs';
@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <BrowserRouter>
+        <Router>
           <div>
             <ul className="linklist">
               <li>
@@ -34,8 +34,10 @@ class App extends Component {
             <Route path='/my-profile' component={MyProfile} />
             <Route path='/about-us' component={AboutUs} />
             <Route path='/products/:id' component={ProductDetails} />
+            <Redirect from="/goods" to="/products" />
+            <Redirect from="/*" to="/" />
           </Switch>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }

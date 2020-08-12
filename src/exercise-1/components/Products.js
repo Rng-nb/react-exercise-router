@@ -22,7 +22,7 @@ class Products extends React.Component {
             item =>
             <li style={{listStyle:'none',fontSize:'30px'}} key={item}>
               <Link 
-               to={{pathname:`/products/${this.state.products[item].id}`, state:{product:this.state.products[item]}}} 
+               to={{path:`/products/${this.state.products[item].id}`, state:{product:this.state.products[item]}}} 
                style={{textDecoration:"none",paddingLeft: '5px', color: 'red'}}>
                {item}
               </Link>
